@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         html2canvas(container).then(canvas => {
             document.body.removeChild(container);
             const image = new Image();
-            image.src = canvas.toDataURL('image/png');
+            image.src = canvas.toDataURL('doc.jpg');
             image.style.width = '100%';
             image.style.height = 'auto';
 
