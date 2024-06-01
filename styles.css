@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=TH+Sarabun+New:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'TH Sarabun New', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #a8e063, #56ab2f);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.save-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background-color: #388e3c;
+}
+
+.hidden {
+    display: none;
+}
+
+#outputSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#outputSection img {
+    max-width: 100%;
+    height: auto;
+}
