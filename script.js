@@ -8,10 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('input6')
     ];
 
-    const outputSection = document.getElementById('outputSection');
-    const resultImage = document.getElementById('resultImage');
+    const saveBtn = document.getElementById('saveBtn');
 
-    document.getElementById('saveBtn').addEventListener('click', function() {
+    saveBtn.addEventListener('click', function() {
         const container = document.createElement('div');
         container.style.width = '1000px';
         container.style.height = '480px';
@@ -20,50 +19,39 @@ document.addEventListener('DOMContentLoaded', function() {
         container.style.backgroundColor = 'white';
         container.style.padding = '20px';
 
-        inputs.forEach((input, index) => {
+        const data = [
+            { value: inputs[0].value, style: { top: '78px', left: '310px', color: 'black' } },
+            { value: inputs[1].value, style: { top: '122px', left: '310px', color: 'black' } },
+            { value: inputs[2].value, style: { top: '163px', left: '310px', color: 'black' } },
+            { value: inputs[3].value, style: { top: '210px', left: '310px', color: 'black' } },
+            { value: inputs[4].value, style: { top: '254px', left: '310px', color: 'black' } },
+            { value: inputs[5].value, style: { top: '297px', left: '310px', color: 'red', width: '400px', whiteSpace: 'normal' } },
+        ];
+
+        data.forEach(item => {
             const output = document.createElement('div');
             output.style.position = 'absolute';
             output.style.fontSize = '18px';
-            output.style.color = (index === 5) ? 'red' : 'black';
-            output.textContent = input.value;
-
-            switch(index) {
-                case 0:
-                    output.style.top = '78px';
-                    output.style.left = '310px';
-                    break;
-                case 1:
-                    output.style.top = '122px';
-                    output.style.left = '310px';
-                    break;
-                case 2:
-                    output.style.top = '163px';
-                    output.style.left = '310px';
-                    break;
-                case 3:
-                    output.style.top = '210px';
-                    output.style.left = '310px';
-                    break;
-                case 4:
-                    output.style.top = '254px';
-                    output.style.left = '310px';
-                    break;
-                case 5:
-                    output.style.top = '297px';
-                    output.style.left = '310px';
-                    output.style.width = '400px';
-                    output.style.whiteSpace = 'normal';
-                    break;
-            }
+            output.style.top = item.style.top;
+            output.style.left = item.style.left;
+            output.style.color = item.style.color;
+            output.style.width = item.style.width || 'auto';
+            output.style.whiteSpace = item.style.whiteSpace || 'nowrap';
+            output.textContent = item.value;
             container.appendChild(output);
         });
 
-        html2canvas(container).then(canvas => {
-            resultImage.src = canvas.toDataURL('https://github.com/useronlineid/document/blob/main/doc.jpg?raw=true');
-            outputSection.classList.remove('hidden');
-        });
+        document.body.appendChild(container);
 
-        document.body.innerHTML = '';
-        document.body.appendChild(outputSection);
+        html2canvas(container).then(canvas => {
+            document.body.removeChild(container);
+            const image = new Image();
+            image.src = canvas.toDataURL('image/png');
+            image.style.width = '100%';
+            image.style.height = 'auto';
+
+            const newWindow = window.open();
+            newWindow.document.body.appendChild(image);
+        });
     });
 });
