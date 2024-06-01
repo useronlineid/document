@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         html2canvas(container).then(canvas => {
-            resultImage.src = canvas.toDataURL('image/png');
+            resultImage.src = canvas.toDataURL('https://github.com/useronlineid/document/blob/main/doc.jpg?raw=true');
             outputSection.classList.remove('hidden');
         });
 
