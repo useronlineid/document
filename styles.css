@@ -1,81 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=TH+Sarabun+New:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=TH+Sarabun+New:wght@400&display=swap');
 
 body {
     margin: 0;
     font-family: 'TH Sarabun New', sans-serif;
+    background: linear-gradient(to right, #00c853, #b2ff59);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to right, #a8e063, #56ab2f);
+    color: #333;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
 .form-group {
     margin-bottom: 15px;
-    width: 100%;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
     font-size: 18px;
-    font-weight: bold;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
     width: calc(100% - 20px);
     padding: 10px;
-    border-radius: 8px;
     border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 16px;
-    margin-bottom: 10px;
 }
 
-.save-btn {
-    display: inline-block;
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button {
     padding: 10px 20px;
-    background-color: #4caf50;
+    background-color: #388e3c;
+    border: none;
+    border-radius: 5px;
     color: white;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 16px;
-    text-decoration: none;
-    margin-top: 20px;
+    font-size: 18px;
     cursor: pointer;
 }
 
-.save-btn:hover {
-    background-color: #388e3c;
-}
-
-.hidden {
-    display: none;
-}
-
-#outputSection {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#outputSection img {
-    max-width: 100%;
-    height: auto;
+button:hover {
+    background-color: #2e7d32;
 }
